@@ -13,17 +13,10 @@ const sessionToken = require('./middleware/sessionToken');
 
 const app = express();
 
-const corsOptions = {
-    origin: process.env.FRONTEND_URL, // Make sure this matches your frontend URL
-    credentials: true,
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    preflightContinue: false,
-    optionsSuccessStatus: 204
-};
-
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); // Handle preflight requests
-
+app.use(cors({
+    origin: process.env.FRONTEND_URL,
+    credentials: true
+}));
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(cookieParser());
@@ -53,7 +46,7 @@ app.use((req, res, next) => {
         res.cookie('sessionToken', sessionToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
-        });
+        }); 
     }
 
     next();
@@ -79,3 +72,5 @@ connectDB().then(() => {
         console.log("Server is running");
     });
 });
+
+
