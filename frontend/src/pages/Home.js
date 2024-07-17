@@ -29,7 +29,7 @@ const Home = () => {
       <BannerProduct/>
 
       <VerticalCardProductAuto category={"Vehicle"} heading={"Vehicles on Sale"}/>
-      <VerticalCardProductAuto category={"Land"} heading={"Land on Sale"}/>
+      {/* <VerticalCardProductAuto category={"Land"} heading={"Land on Sale"}/> */}
       
       
     </div>
