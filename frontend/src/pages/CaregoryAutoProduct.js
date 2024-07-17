@@ -111,7 +111,7 @@ const CaregoryAutoProduct = () => {
       {/**desktop version */}
       <div className='lg:grid grid-cols-[200px,1fr]'>
         {/**left side */}
-        <div className='bg-white p-2 min-h-[calc(100vh-120px)] overflow-y-scroll'>
+        <div className='bg-white p-2 min-h-[calc(100vh-120px)] overflow-y-scroll hidden'>
           {/**sort by */}
           <div className=''>
             {/* <h3 className='text-base uppercase font-medium text-slate-600 border-b pb-1 border-slate-400'>Sort by</h3> */}
@@ -131,7 +131,7 @@ const CaregoryAutoProduct = () => {
 
 
           {/**filter by */}
-          <div className='hidden'>
+          <div className=''>
             <h3 className='text-base uppercase font-medium text-slate-600 border-b pb-1 border-slate-400'>Category</h3>
 
             <form className='text-sm flex flex-col gap-2 py-2'>
