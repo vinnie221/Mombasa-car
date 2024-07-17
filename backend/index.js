@@ -14,7 +14,7 @@ const sessionToken = require('./middleware/sessionToken');
 const app = express();
 
 const corsOptions = {
-    origin: process.env.FRONTEND_URL,
+    origin: process.env.FRONTEND_URL, // Make sure this matches your frontend URL
     credentials: true,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     preflightContinue: false,
@@ -22,7 +22,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); // handle preflight requests
+app.options('*', cors(corsOptions)); // Handle preflight requests
 
 app.use(bodyParser.json());
 app.use(express.json());
