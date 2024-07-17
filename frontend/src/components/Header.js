@@ -71,7 +71,7 @@ const Header = () => {
 
 
   return (
-    <header className="h-16 shadow-md bg-white fixed w-full z-40">
+    <header className="h-16 shadow-md bg-white fixed w-full z-40 overflow-x-auto">
       <div className="h-full container mx-auto flex items-center px-4, justify-between">
         <div className="flex gap-6">
           <div>
@@ -79,7 +79,7 @@ const Header = () => {
               <Logo w={100} h={60} />
             </Link>{" "}
           </div>
-          <p className="flex gap-1 text-blue-400"><p >WhatsApp</p> <p className="text-2xl"><LiaHandPointRightSolid /></p> </p>
+          
           <div className="">
             <a 
               href="https://wa.me/254702751085" 
