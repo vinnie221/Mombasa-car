@@ -109,7 +109,7 @@ const CaregoryAutoProduct = () => {
     <div className='container mx-auto p-4'>
 
       {/**desktop version */}
-      <div className='hidden lg:grid grid-cols-[200px,1fr]'>
+      <div className='lg:grid grid-cols-[200px,1fr]'>
         {/**left side */}
         <div className='bg-white p-2 min-h-[calc(100vh-120px)] overflow-y-scroll'>
           {/**sort by */}
@@ -131,7 +131,7 @@ const CaregoryAutoProduct = () => {
 
 
           {/**filter by */}
-          <div className=''>
+          {/* <div className=''>
             <h3 className='text-base uppercase font-medium text-slate-600 border-b pb-1 border-slate-400'>Category</h3>
 
             <form className='text-sm flex flex-col gap-2 py-2'>
@@ -146,7 +146,7 @@ const CaregoryAutoProduct = () => {
                    })
                 }
             </form>
-          </div>
+          </div> */}
 
 
         </div>
