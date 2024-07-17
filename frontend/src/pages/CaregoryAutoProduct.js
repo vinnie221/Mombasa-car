@@ -131,7 +131,7 @@ const CaregoryAutoProduct = () => {
 
 
           {/**filter by */}
-          <div className=''>
+          <div className='hidden'>
             <h3 className='text-base uppercase font-medium text-slate-600 border-b pb-1 border-slate-400'>Category</h3>
 
             <form className='text-sm flex flex-col gap-2 py-2'>
