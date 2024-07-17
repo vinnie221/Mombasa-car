@@ -5,6 +5,11 @@ const autoProductModel = require("../../models/autoProductModel")
 
 async function updateAutoProductController(req,res){
     try{
+        const tokenOption = {
+            httpOnly : true,
+            secure : true,
+            sameSite : 'None'
+        }
         if(!uploadProductPermission(req.userId)){
             throw new Error("Permission denied")
         }
