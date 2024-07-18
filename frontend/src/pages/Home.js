@@ -6,26 +6,13 @@ import CategoryListAuto from '../components/CategoryListAuto'
 import VerticalCardProductAuto from '../components/VerticalCardProductAuto'
 import { Link, useNavigate } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi';
-
+const navigate = useNavigate()
+const [search,setSearch] = useState(searchQuery)
 
 
 
 const Home = () => {
-  const navigate = useNavigate()
-const [search,setSearch] = useState(searchQuery)
-
-  const handleSearchAuto = (e)=>{
-    const { value } = e.target
-    setSearch(value)
   
-    if(value){
-      navigate(`/search-auto?q=${value}`)
-    }else{
-      navigate("/search-auto")
-    }
-  
-  
-  }
   return (
     <div>
       <div className='flex w-full justify-between p-2 pl-5 pb-0'>
