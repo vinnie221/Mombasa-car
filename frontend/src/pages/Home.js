@@ -4,9 +4,9 @@ import BannerProduct from '../components/BannerProduct'
 
 import CategoryListAuto from '../components/CategoryListAuto'
 import VerticalCardProductAuto from '../components/VerticalCardProductAuto'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi';
-
+const navigate = useNavigate()
 const [search,setSearch] = useState(searchQuery)
 
 const handleSearchAuto = (e)=>{
