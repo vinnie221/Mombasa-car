@@ -15,7 +15,7 @@ import { LiaHandPointRightSolid } from "react-icons/lia";
 const Header = () => {
   const user = useSelector((state) => state?.user?.user);
   const dispatch = useDispatch();
-  const [menuDisplay, setmenuDisplay] = useState(false);
+  const [menuDisplay, setMenuDisplay] = useState(false);
   const context = useContext(Context);
   const navigate = useNavigate();
   const searchInput = useLocation();
@@ -65,32 +65,30 @@ const Header = () => {
 
   return (
     <header className="h-16 shadow-md bg-white fixed w-full z-40">
-      <div className="h-full container mx-auto flex items-center px-4 justify-between">
+      <div className="container mx-auto flex items-center justify-between px-4">
+        {/* Left section */}
         <div className="flex items-center gap-4 lg:gap-6">
-          <div>
-            <Link to={"/"}>
-              <Logo w={80} h={48} /> {/* Adjusted logo size for mobile */}
-            </Link>
-          </div>
+          <Link to={"/"}>
+            <Logo w={80} h={48} /> {/* Adjusted logo size */}
+          </Link>
 
-          <div className="text-xl lg:text-4xl">
-            <a
-              href="https://wa.me/254702751085"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-400 hover:text-green-700"
-            >
-              <FaWhatsappSquare />
-            </a>
-          </div>
+          <a
+            href="https://wa.me/254702751085"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-green-400 hover:text-green-700"
+          >
+            <FaWhatsappSquare className="text-4xl lg:text-6xl" />
+          </a>
         </div>
 
+        {/* Center section */}
         <div className="flex-grow ml-4 lg:max-w-sm w-full">
           <div className="relative flex items-center w-full border rounded-full focus-within:shadow">
             <input
               type="text"
               placeholder="Search for products here..."
-              className="w-full px-3 py-2 outline-none text-sm" // Adjusted input padding and text size
+              className="w-full px-3 py-2 outline-none text-sm"
               onChange={handleSearchAuto}
               value={search}
             />
@@ -100,12 +98,13 @@ const Header = () => {
           </div>
         </div>
 
+        {/* Right section */}
         <div className="flex items-center gap-4 lg:gap-8">
           <div className="relative flex justify-center">
             {user?._id && (
               <div
                 className="text-xl lg:text-4xl cursor-pointer relative flex justify-center"
-                onClick={() => setmenuDisplay((prev) => !prev)}
+                onClick={() => setMenuDisplay((prev) => !prev)}
               >
                 {user?.profilePic ? (
                   <img
@@ -126,9 +125,9 @@ const Header = () => {
                     <div className="">
                       <div className="pt-2">
                         <Link
-                          className="whitespace-nowrap hover:bg-blue-500 p-2 rounded-xl text-sm lg:text-base" // Adjusted text size
+                          className="whitespace-nowrap hover:bg-blue-500 p-2 rounded-xl text-sm lg:text-base"
                           to={"/automobileadmin-panel/all-uploads"}
-                          onClick={() => setmenuDisplay((prev) => !prev)}
+                          onClick={() => setMenuDisplay((prev) => !prev)}
                         >
                           Admin Section
                         </Link>
