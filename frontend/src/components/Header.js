@@ -85,16 +85,18 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="hidden lg:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow pl-2">
-          <input
-            type="text"
-            placeholder="Search for products here..."
-            className="w-full outline-none"
-            onChange={handleSearchAuto}
-            value={search}
-          />
-          <div className="text-lg min-w-[50px] h-8 bg-blue-600 flex items-center justify-center rounded-r-full text-white">
-            <FiSearch />
+        <div className="flex-grow ml-4 lg:max-w-sm w-full">
+          <div className="relative flex items-center w-full border rounded-full focus-within:shadow">
+            <input
+              type="text"
+              placeholder="Search for products here..."
+              className="w-full px-4 py-2 outline-none text-sm"
+              onChange={handleSearchAuto}
+              value={search}
+            />
+            <div className="absolute right-0 mr-2">
+              <FiSearch className="text-lg h-8 bg-blue-600 text-white rounded-full p-2 cursor-pointer" />
+            </div>
           </div>
         </div>
 
@@ -154,21 +156,6 @@ const Header = () => {
                 Login
               </Link>
             )}
-          </div>
-        </div>
-      </div>
-
-      <div className="lg:hidden flex items-center justify-between px-4 mt-2">
-        <div className="flex items-center w-full border rounded-full focus-within:shadow pl-2">
-          <input
-            type="text"
-            placeholder="Search for products here..."
-            className="w-full outline-none"
-            onChange={handleSearchAuto}
-            value={search}
-          />
-          <div className="text-lg min-w-[50px] h-8 bg-blue-600 flex items-center justify-center rounded-r-full text-white">
-            <FiSearch />
           </div>
         </div>
       </div>
