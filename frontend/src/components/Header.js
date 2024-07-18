@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import Logo from "./logo";
 import { FiSearch } from "react-icons/fi";
-import { FaRegCircleUser } from "react-icons/fa6";
+import { FaRegCircleUser } from "react-icons/fa";
 import { FaWhatsappSquare } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,13 +10,11 @@ import { toast } from "react-toastify";
 import { setUserDetails } from "../stores/userSlice";
 import ROLE from "../common/role";
 import Context from "../context";
-import { LiaHandPointRightSolid } from "react-icons/lia";
 
 const Header = () => {
   const user = useSelector((state) => state?.user?.user);
   const dispatch = useDispatch();
   const [menuDisplay, setMenuDisplay] = useState(false);
-  const context = useContext(Context);
   const navigate = useNavigate();
   const searchInput = useLocation();
   const URLSearch = new URLSearchParams(searchInput?.search);
@@ -38,17 +36,6 @@ const Header = () => {
     }
     if (data.error) {
       toast.error(data.message);
-    }
-  };
-
-  const handleSearch = (e) => {
-    const { value } = e.target;
-    setSearch(value);
-
-    if (value) {
-      navigate(`/search?q=${value}`);
-    } else {
-      navigate("/search");
     }
   };
 
@@ -100,44 +87,22 @@ const Header = () => {
 
         {/* Right section */}
         <div className="flex items-center gap-4 lg:gap-8">
-          <div className="relative flex justify-center">
-            {user?._id && (
-              <div
-                className="text-xl lg:text-4xl cursor-pointer relative flex justify-center"
-                onClick={() => setMenuDisplay((prev) => !prev)}
-              >
-                {user?.profilePic ? (
-                  <img
-                    src={user?.profilePic}
-                    className="w-8 h-8 lg:w-10 lg:h-10 rounded-full"
-                    alt={user?.name}
-                  />
-                ) : (
-                  <FaRegCircleUser />
-                )}
-              </div>
-            )}
-
-            {menuDisplay && (
-              <div className="absolute bg-white bottom-0 top-11 h-fit p-2 shadow-lg rounded">
-                <nav>
-                  {user?.role === ROLE.ADMIN && (
-                    <div className="">
-                      <div className="pt-2">
-                        <Link
-                          className="whitespace-nowrap hover:bg-blue-500 p-2 rounded-xl text-sm lg:text-base"
-                          to={"/automobileadmin-panel/all-uploads"}
-                          onClick={() => setMenuDisplay((prev) => !prev)}
-                        >
-                          Admin Section
-                        </Link>
-                      </div>
-                    </div>
-                  )}
-                </nav>
-              </div>
-            )}
-          </div>
+          {user?._id && (
+            <div
+              className="text-xl lg:text-4xl cursor-pointer relative flex justify-center"
+              onClick={() => setMenuDisplay((prev) => !prev)}
+            >
+              {user?.profilePic ? (
+                <img
+                  src={user?.profilePic}
+                  className="w-8 h-8 lg:w-10 lg:h-10 rounded-full"
+                  alt={user?.name}
+                />
+              ) : (
+                <FaRegCircleUser />
+              )}
+            </div>
+          )}
 
           <div>
             {user?._id ? (
@@ -157,6 +122,27 @@ const Header = () => {
             )}
           </div>
         </div>
+
+        {/* Expanded menu */}
+        {menuDisplay && (
+          <div className="absolute bg-white bottom-0 top-11 h-fit p-2 shadow-lg rounded">
+            <nav>
+              {user?.role === ROLE.ADMIN && (
+                <div className="">
+                  <div className="pt-2">
+                    <Link
+                      className="whitespace-nowrap hover:bg-blue-500 p-2 rounded-xl text-sm lg:text-base"
+                      to={"/automobileadmin-panel/all-uploads"}
+                      onClick={() => setMenuDisplay((prev) => !prev)}
+                    >
+                      Admin Section
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );
