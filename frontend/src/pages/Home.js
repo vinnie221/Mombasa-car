@@ -36,7 +36,7 @@ const Home = () => {
           <div className="relative flex items-center w-full border rounded-full focus-within:shadow pl-2">
             <input
               type="text"
-              placeholder="Search for products here..."
+              placeholder="Search here..."
               className="w-40 outline-none text-sm px-3 py-1  rounded-xl"
               onChange={handleSearchAuto}
               value={search}
