@@ -32,12 +32,12 @@ const Home = () => {
             <p className="bg-blue-500 w-28 h-10 justify-center items-center rounded-xl text-white hover:bg-blue-800 flex">about us</p>
           </Link>
           {/* Mobile search bar */}
-        <div className="block lg:hidden rounded-xl  my-4">
+        <div className="block lg:hidden  my-4">
           <div className="relative flex items-center w-full border rounded-full focus-within:shadow pl-2">
             <input
               type="text"
               placeholder="Search for products here..."
-              className="w-40 outline-none text-sm px-3 py-1"
+              className="w-40 outline-none text-sm px-3 py-1  rounded-xl"
               onChange={handleSearchAuto}
               value={search}
             />
