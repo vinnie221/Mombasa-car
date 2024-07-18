@@ -66,19 +66,19 @@ const Header = () => {
   return (
     <header className="h-16 shadow-md bg-white fixed w-full z-40">
       <div className="h-full container mx-auto flex items-center px-4 justify-between">
-        <div className="flex gap-6 items-center">
+        <div className="flex items-center gap-4 lg:gap-6">
           <div>
             <Link to={"/"}>
-              <Logo w={100} h={60} />
+              <Logo w={80} h={48} /> {/* Adjusted logo size for mobile */}
             </Link>
           </div>
 
-          <div className="">
+          <div className="text-xl lg:text-4xl">
             <a
               href="https://wa.me/254702751085"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-green-400 text-4xl hover:text-green-700 hover:scale-150"
+              className="text-green-400 hover:text-green-700"
             >
               <FaWhatsappSquare />
             </a>
@@ -90,7 +90,7 @@ const Header = () => {
             <input
               type="text"
               placeholder="Search for products here..."
-              className="w-full px-4 py-2 outline-none text-sm"
+              className="w-full px-3 py-2 outline-none text-sm" // Adjusted input padding and text size
               onChange={handleSearchAuto}
               value={search}
             />
@@ -100,17 +100,17 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-4 lg:gap-8">
           <div className="relative flex justify-center">
             {user?._id && (
               <div
-                className="text-4xl cursor-pointer relative flex justify-center"
-                onClick={() => setmenuDisplay((preve) => !preve)}
+                className="text-xl lg:text-4xl cursor-pointer relative flex justify-center"
+                onClick={() => setmenuDisplay((prev) => !prev)}
               >
                 {user?.profilePic ? (
                   <img
                     src={user?.profilePic}
-                    className="w-10 h-10 rounded-full"
+                    className="w-8 h-8 lg:w-10 lg:h-10 rounded-full"
                     alt={user?.name}
                   />
                 ) : (
@@ -126,9 +126,9 @@ const Header = () => {
                     <div className="">
                       <div className="pt-2">
                         <Link
-                          className="whitespace-nowrap hover:bg-blue-500 p-2 rounded-xl"
+                          className="whitespace-nowrap hover:bg-blue-500 p-2 rounded-xl text-sm lg:text-base" // Adjusted text size
                           to={"/automobileadmin-panel/all-uploads"}
-                          onClick={() => setmenuDisplay((preve) => !preve)}
+                          onClick={() => setmenuDisplay((prev) => !prev)}
                         >
                           Admin Section
                         </Link>
@@ -144,14 +144,14 @@ const Header = () => {
             {user?._id ? (
               <button
                 onClick={handleLogout}
-                className="px-3 py-1 rounded-full text-white bg-red-500 hover:bg-red-900"
+                className="px-2 py-1 rounded-full text-sm lg:text-base bg-red-500 hover:bg-red-900"
               >
                 Logout
               </button>
             ) : (
               <Link
                 to={"/Login"}
-                className="px-3 py-1 rounded-full text-white bg-blue-500 hover:bg-blue-800"
+                className="px-2 py-1 rounded-full text-sm lg:text-base bg-blue-500 hover:bg-blue-800"
               >
                 Login
               </Link>
