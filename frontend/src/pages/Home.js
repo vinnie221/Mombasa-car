@@ -32,7 +32,7 @@ const Home = () => {
             <p className="bg-blue-500 w-28 h-10 justify-center items-center rounded-xl text-white hover:bg-blue-800 flex">about us</p>
           </Link>
           {/* Mobile search bar */}
-        <div className="block lg:hidden px-4 my-4">
+        <div className="block lg:hidden rounded-xl  my-4">
           <div className="relative flex items-center w-full border rounded-full focus-within:shadow pl-2">
             <input
               type="text"
