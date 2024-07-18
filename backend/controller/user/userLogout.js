@@ -7,7 +7,7 @@ async function userLogout(req, res){
         // };
 
         // Clear the authentication token cookie
-        res.clearCookie("token", tokenOption);
+        res.clearCookie("token");
 
         // Clear the sessionToken cookie
        // res.clearCookie("sessionToken", tokenOption);
