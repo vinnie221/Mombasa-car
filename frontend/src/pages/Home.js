@@ -37,13 +37,13 @@ const Home = () => {
             <input
               type="text"
               placeholder="Search for products here..."
-              className="w-1/4 outline-none text-sm px-3 py-1"
+              className="w-40 outline-none text-sm px-3 py-1"
               onChange={handleSearchAuto}
               value={search}
             />
-            <div className="text-lg min-w-[50px] h-8 bg-blue-600 flex items-center justify-center rounded-r-full text-white">
+            {/* <div className="text-lg min-w-[50px] h-8 bg-blue-600 flex items-center justify-center rounded-r-full text-white">
               <FiSearch />
-            </div>
+            </div> */}
           </div>
         </div>
         </div>
