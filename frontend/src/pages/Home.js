@@ -30,21 +30,13 @@ const Home = () => {
         <Link to={'/about-us'}>
           <p className="bg-blue-500 w-28 h-10 justify-center items-center rounded-xl text-white hover:bg-blue-800 flex">about us</p>
         </Link>
-        
-        <div className='w-full flex justify-end'>
-          <div className=''>
-            <CategoryListAuto/>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile search bar */}
+        {/* Mobile search bar */}
       <div className="block lg:hidden px-4 my-4">
         <div className="relative flex items-center w-full border rounded-full focus-within:shadow pl-2">
           <input
             type="text"
             placeholder="Search for products here..."
-            className="w-full outline-none text-sm px-3 py-2"
+            className="w-1/4 outline-none text-sm px-3 py-1"
             onChange={handleSearchAuto}
             value={search}
           />
@@ -53,6 +45,15 @@ const Home = () => {
           </div>
         </div>
       </div>
+        
+        <div className='w-full flex justify-end'>
+          <div className=''>
+            <CategoryListAuto/>
+          </div>
+        </div>
+      </div>
+
+      
 
       <BannerProduct />
 
