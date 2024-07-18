@@ -92,9 +92,9 @@ const Header = () => {
               onChange={handleSearchAuto}
               value={search}
             />
-            <div className="absolute right-0 mr-2">
+            {/* <div className="absolute right-0 mr-2">
               <FiSearch className="text-lg h-8 bg-blue-600 text-white rounded-full p-2 cursor-pointer" />
-            </div>
+            </div> */}
           </div>
         </div>
 
