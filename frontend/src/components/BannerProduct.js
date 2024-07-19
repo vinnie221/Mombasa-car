@@ -12,7 +12,7 @@ const BannerProduct = () => {
   const mobileImages = [
     image1,
     image2,
-    image3,
+    
     image1mobile
   ]
 
@@ -20,7 +20,7 @@ const BannerProduct = () => {
   const desktopImages = [
     image1,
     image2,
-    image3,
+    
     image1mobile
   ]
 
