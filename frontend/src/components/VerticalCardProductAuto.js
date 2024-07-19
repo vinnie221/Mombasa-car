@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Context from "../context";
 import fetchCategoryWiseProductAuto from "../helpers/fetchCategoryWiseProductAuto";
 import { FcCellPhone } from "react-icons/fc";
+import displayFormattedTimestamp from "../helpers/displayFormattedTimestamp";
 
 const VerticalCardProductAuto = ({category, heading}) => {
   const [data,setData] = useState([]);
@@ -80,6 +81,7 @@ const VerticalCardProductAuto = ({category, heading}) => {
                           </div>
                           <div className="cursor-pointer p-4 grid gap-3">
                               <h2 className="font-medium text-base md:text-lg text-ellipsis line-clamp-1 text-green-500">{product?.brandName}</h2>
+                              <p className="text-blue-500 ">uploaded : {displayFormattedTimestamp(product?.createdAt)}</p>
                               <p className="capitalize text-green-500">{product?.productName}</p>
                               <div className="gap-4">
                                 <p className="text-red-500 font-medium">Price:  {displayKESCurrency(product?.price)}</p>
