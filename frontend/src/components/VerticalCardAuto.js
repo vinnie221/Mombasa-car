@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Context from '../context';
 
 import { FcCellPhone } from "react-icons/fc";
+import displayFormattedTimestamp from '../helpers/displayFormattedTimestamp';
 
 const VerticalCardAuto = ({loading,data =[]}) => {
 
@@ -50,6 +51,8 @@ const VerticalCardAuto = ({loading,data =[]}) => {
                             <p className="font-semibold text-red-600">{displayKESCurrency(product.price)}</p>
                             <p className="font-semibold text-green-600">{product.brandName}</p>
                             <p className="font-semibold text-green-600">{product.productName}</p>
+                            <p className="text-blue-500 font-semibold">Uploaded : {displayFormattedTimestamp(product?.createdAt)}</p>
+                            <p className="capitalize flex gap-2"> <p className="text-green-500 font-semibold">ID :</p> <p className="text-slate-900 font-bold">{product?._id}</p></p>
                             <p className="font-semibold flex gap-4">
                                 <p><p>Call</p> </p>
                                 <p className="flex"><p className="text-xl"><FcCellPhone /></p><p className="text-blue-600">{product.phoneNumber}</p></p>

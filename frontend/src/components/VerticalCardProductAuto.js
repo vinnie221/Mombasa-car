@@ -81,8 +81,10 @@ const VerticalCardProductAuto = ({category, heading}) => {
                           </div>
                           <div className="cursor-pointer p-4 grid gap-3">
                               <h2 className="font-medium text-base md:text-lg text-ellipsis line-clamp-1 text-green-500">{product?.brandName}</h2>
-                              <p className="text-blue-500 ">uploaded : {displayFormattedTimestamp(product?.createdAt)}</p>
+                              
                               <p className="capitalize text-green-500">{product?.productName}</p>
+                              <p className="text-blue-500 ">Uploaded : {displayFormattedTimestamp(product?.createdAt)}</p>
+                              <p className="capitalize flex gap-2"> <p className="text-green-500 font-semibold">ID :</p> <p className="text-slate-700 font-bold">{product?._id}</p></p>
                               <div className="gap-4">
                                 <p className="text-red-500 font-medium">Price:  {displayKESCurrency(product?.price)}</p>
                                 <div className="flex gap-3">

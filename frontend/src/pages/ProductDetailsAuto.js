@@ -189,7 +189,9 @@ const ProductDetailsAuto = () => {
                 <div className='flex items-center gap-3 text-2xl lg:text-2xl font-medium my-1'>
                   <p className=' text-red-600'>Price:</p>
                   <p className='text-blue-500 '>{displayKESCurrency(data.price)}</p>
+                  
                 </div>
+                <p className="capitalize flex gap-2 text-xl"> <p className="text-green-500 font-semibold">ID :</p> <p className="text-slate-900 font-bold">{data?._id}</p></p>
 
                 <div className='flex items-center gap-3 my-2'>
                     <div className="cursor-pointer p-4 grid gap-3">

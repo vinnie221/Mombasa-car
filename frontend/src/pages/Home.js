@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FiSearch } from "react-icons/fi";
 import { Link } from 'react-router-dom';
@@ -8,20 +8,36 @@ import VerticalCardProductAuto from '../components/VerticalCardProductAuto';
 
 const Home = () => {
   const [search, setSearch] = useState('');
+  const [timer, setTimer] = useState(null);
   const navigate = useNavigate();
   const searchInput = useLocation();
   const URLSearch = new URLSearchParams(searchInput?.search);
   const searchQuery = URLSearch.getAll("q");
 
+  useEffect(() => {
+    // Cleanup timer on unmount or when search changes
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, [timer]);
+
   const handleSearchAuto = (e) => {
     const { value } = e.target;
     setSearch(value);
 
-    if (value) {
-      navigate(`/search-auto?q=${value}`);
-    } else {
-      navigate("/search-auto");
-    }
+    // Clear previous timer if it exists
+    if (timer) clearTimeout(timer);
+
+    // Set a new timer for navigating
+    const newTimer = setTimeout(() => {
+      if (value) {
+        navigate(`/search-auto?q=${value}`);
+      } else {
+        navigate("/search-auto");
+      }
+    }, 3000); // 3 seconds delay
+
+    setTimer(newTimer);
   };
 
   return (
@@ -32,35 +48,32 @@ const Home = () => {
             <p className="bg-blue-500 w-28 h-10 justify-center items-center rounded-xl text-white hover:bg-blue-800 flex">about us</p>
           </Link>
           {/* Mobile search bar */}
-        <div className="block lg:hidden  my-4">
-          <div className="relative flex items-center w-full border rounded-full focus-within:shadow pl-2">
-            <input
-              type="text"
-              placeholder="Search here..."
-              className="w-40 outline-none text-sm px-3 py-1  rounded-xl"
-              onChange={handleSearchAuto}
-              value={search}
-            />
-            {/* <div className="text-lg min-w-[50px] h-8 bg-blue-600 flex items-center justify-center rounded-r-full text-white">
-              <FiSearch />
-            </div> */}
+          <div className="block lg:hidden my-4">
+            <div className="relative flex items-center w-full border rounded-full focus-within:shadow pl-2">
+              <input
+                type="text"
+                placeholder="Search here..."
+                className="w-40 outline-none text-sm px-3 py-1 rounded-xl"
+                onChange={handleSearchAuto}
+                value={search}
+              />
+              {/* <div className="text-lg min-w-[50px] h-8 bg-blue-600 flex items-center justify-center rounded-r-full text-white">
+                <FiSearch />
+              </div> */}
+            </div>
           </div>
         </div>
-        </div>
-        
         
         <div className='w-full flex justify-end'>
           <div className=''>
-            <CategoryListAuto/>
+            <CategoryListAuto />
           </div>
         </div>
       </div>
 
-      
-
       <BannerProduct />
 
-      <VerticalCardProductAuto category={"Vehicle"} heading={"Vehicles on Sale"}/>
+      <VerticalCardProductAuto category={"Vehicle"} heading={"Vehicles on Sale"} />
     </div>
   );
 };
