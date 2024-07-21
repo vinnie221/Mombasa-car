@@ -76,8 +76,8 @@ const VerticalCardProductAuto = ({category, heading}) => {
                 data?.map((product,index) =>{
                   return (
                     <Link to={"autoproduct/"+product?._id} className="w-full min-w-[ 280px] md:min-w-[320px] max-w-[ 280px] md:max-w-[320px] bg-white rounded-sm shadow">
-                          <div className="bg-blue-200 h-48 p-2 min-w-[280px] md:min-w-[145px] flex justify-center items-center">
-                          <img src={product.productImage[0]} className="object-scale-down min-w-[280px] md:min-w-[145px] pl-0 pr-0 h-full  cursor-pointer hover:scale-110 transition-all mix-blend-multiply"/>
+                          <div className="bg-blue-200 h-48 p-4 min-w-[280px] md:min-w-[145px] flex justify-center items-center">
+                          <img src={product.productImage[0]} className="object-scale-down h-full cursor-pointer hover:scale-110 transition-all mix-blend-multiply"/>
                           </div>
                           <div className="cursor-pointer p-4 grid gap-3">
                               <h2 className="font-medium text-base md:text-lg text-ellipsis line-clamp-1 text-green-500">{product?.brandName}</h2>
