@@ -46,7 +46,7 @@ const AutoAdminProductCard = ({ data, fetchdata }) => {
             src={data?.productImage[0]}
             width={200}
             height={150}
-            className="mx-auto object-fill h-full"
+            className="object-scale-down h-full cursor-pointer hover:scale-110 transition-all mix-blend-multiply"
           />
         </div>
         <h1 className="text-ellipsis font-semibold line-clamp-1 text-green-600">{data.brandName}</h1>
