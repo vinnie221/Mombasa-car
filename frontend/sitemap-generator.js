@@ -5,7 +5,7 @@ const path = require('path');
 
 const links = [
   { url: '/', changefreq: 'daily', priority: 0.9 },
-  { url: '/about', changefreq: 'weekly', priority: 0.8 },
+  { url: '/about-us', changefreq: 'weekly', priority: 0.8 },
   { url: '/contact', changefreq: 'monthly', priority: 0.7 },
   // Add other routes here
 ];
