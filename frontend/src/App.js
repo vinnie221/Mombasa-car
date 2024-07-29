@@ -49,14 +49,14 @@ function App() {
     <HelmetProvider>
       <Helmet>
         <title>Mombasa Car - Your Trusted Car Dealer</title>
-        <meta name="description" content="Mombasa Car offers the best deals on cars in Mombasa. Find your perfect car with us." />
+        <meta name="Mombasa Car offers the best deals on cars in Mombasa" content="Mombasa Car offers the best deals on cars in Mombasa. Find your perfect car with us." />
         <meta name="keywords" content="Mombasa cars, buy cars Mombasa, car dealers Mombasa, used cars Mombasa" />
         <meta name="author" content="Mombasa Car" />
         <meta property="og:title" content="Mombasa Car - Your Trusted Car Dealer" />
         <meta property="og:description" content="Mombasa Car offers the best deals on cars in Mombasa. Find your perfect car with us." />
         <meta property="og:url" content="https://mombasacar.co.ke" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="URL_to_your_image" />
+        <meta property="og:image" content="%PUBLIC_URL%/favicon.ico" />
       </Helmet>
       <Context.Provider value={{
           fetchUserDetails,  // user details fetch
