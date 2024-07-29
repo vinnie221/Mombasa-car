@@ -48,7 +48,7 @@ function App() {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>Mombasa Car - Your Trusted Car Dealer</title>
+        <title>Mombasa Cars - Your Trusted Car Dealer</title>
         <meta name="Mombasa Car offers the best deals on cars in Mombasa" content="Mombasa Car offers the best deals on cars in Mombasa. Find your perfect car with us." />
         <meta name="keywords" content="Mombasa cars, buy cars Mombasa, car dealers Mombasa, used cars Mombasa" />
         <meta name="author" content="Mombasa Car" />
