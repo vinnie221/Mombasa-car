@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import BannerProduct from '../components/BannerProduct';
 import CategoryListAuto from '../components/CategoryListAuto';
 import VerticalCardProductAuto from '../components/VerticalCardProductAuto';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const Home = () => {
   const [search, setSearch] = useState('');
@@ -41,7 +42,18 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <HelmetProvider>
+      <Helmet>
+        <title>Mombasa Cars - Buy Your Dream Car Online</title>
+        <meta name="description" content="Mombasa Car offers the best deals on cars online. Buy your car from Mombasa's trusted dealer. Find cars online, buy cars in Mombasa." />
+        <meta name="keywords" content="mombasa car deals, cars online, buy car, mombasa cars, buy cars online" />
+        <meta property="og:title" content="Mombasa Cars - Buy Your Dream Car Online" />
+        <meta property="og:description" content="Mombasa Car offers the best deals on cars online. Buy your car from Mombasa's trusted dealer. Find cars online, buy cars in Mombasa." />
+        <meta property="og:url" content="https://mombasacar.co.ke" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="%PUBLIC_URL%/favicon.ico" />
+      </Helmet>
+
       <div className='flex w-full justify-between p-2 pl-5 pb-0'>
         <div className='flex-col'>
           <Link to={'/about-us'}>
@@ -57,9 +69,6 @@ const Home = () => {
                 onChange={handleSearchAuto}
                 value={search}
               />
-              {/* <div className="text-lg min-w-[50px] h-8 bg-blue-600 flex items-center justify-center rounded-r-full text-white">
-                <FiSearch />
-              </div> */}
             </div>
           </div>
         </div>
@@ -72,9 +81,8 @@ const Home = () => {
       </div>
 
       <BannerProduct />
-
       <VerticalCardProductAuto category={"Vehicle"} heading={"Vehicles on Sale"} />
-    </div>
+    </HelmetProvider>
   );
 };
 
