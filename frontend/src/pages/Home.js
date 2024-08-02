@@ -61,7 +61,7 @@ const Home = () => {
             <p className="bg-blue-500 w-28 h-10 justify-center items-center rounded-xl text-white hover:bg-blue-800 flex">about us</p>
           </Link>
           {/* Mobile search bar */}
-          <div className="block lg:hidden my-4">
+          {/* <div className="block lg:hidden my-4">
             <div className="relative flex items-center w-full border rounded-full focus-within:shadow pl-2">
               <input
                 type="text"
@@ -71,7 +71,7 @@ const Home = () => {
                 value={search}
               />
             </div>
-          </div>
+          </div> */}
         </div>
         
         <div className='w-full flex justify-end'>
