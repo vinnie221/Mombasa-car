@@ -6,6 +6,7 @@ import BannerProduct from '../components/BannerProduct';
 import CategoryListAuto from '../components/CategoryListAuto';
 import VerticalCardProductAuto from '../components/VerticalCardProductAuto';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+//import image1mobile from '../images/banner/mobile.jpg'
 
 const Home = () => {
   const [search, setSearch] = useState('');
@@ -48,7 +49,7 @@ const Home = () => {
         <meta name="description" content="Mombasa Car offers the best deals on cars online. Buy your car from Mombasa's trusted dealer. Find cars online, buy cars in Mombasa." />
         <meta name="keywords" content="mombasa car deals, cars online, buy car, mombasa cars, buy cars online" />
         <meta property="og:title" content="Mombasa Cars - Buy Your Dream Car Online" />
-        <meta property="og:description" content="Mombasa Car offers the best deals on cars online. Buy your car from Mombasa's trusted dealer. Find cars online, buy cars in Mombasa." />
+        <meta property="og:description" content="Mombasa Car offers the best deals on cars online. Buy your car from Mombasa's trusted dealer. Find cars online, Contact us at 0702751085." />
         <meta property="og:url" content="https://mombasacar.co.ke" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="%PUBLIC_URL%/favicon.ico" />
