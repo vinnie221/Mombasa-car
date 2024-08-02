@@ -94,44 +94,45 @@ const VerticalCardProductAuto = ({ category, heading }) => {
               </div>
             ))
           : data?.map((product) => (
-              <Link
-                key={product?._id}
-                to={"autoproduct/" + product?._id}
-                className="flex-grow min-w-[280px] md:min-w-[320px] max-w-[280px] md:max-w-[320px] bg-white rounded-sm shadow p-0"
-              >
-                <div className="bg-blue-100 h-48 p-1 min-w-[280px] md:min-w-[145px] flex justify-center items-center">
-                  <img
-                    src={product?.productImage[0]}
-                    className="w-full h-full object-scale-down cursor-pointer hover:scale-110 transition-all mix-blend-multiply"
-                  />
+            <Link
+            key={product?._id}
+            to={"autoproduct/" + product?._id}
+            className="w-full sm:flex-grow sm:min-w-[280px] sm:max-w-[280px] md:min-w-[320px] md:max-w-[320px] bg-white rounded-sm shadow p-0"
+          >
+            <div className="bg-blue-100 h-48 p-1 w-full sm:min-w-[280px] md:min-w-[145px] flex justify-center items-center">
+              <img
+                src={product?.productImage[0]}
+                className="w-full h-full object-scale-down cursor-pointer hover:scale-110 transition-all mix-blend-multiply"
+              />
+            </div>
+            <div className="cursor-pointer p-4 grid gap-3">
+              <p className="font-semibold text-red-600">
+                {displayKESCurrency(product.price)}
+              </p>
+              <p className="font-semibold text-green-600">
+                {product.brandName}
+              </p>
+              <p className="font-semibold text-green-600">
+                {product.productName}
+              </p>
+              <p className="text-blue-500 font-semibold">
+                Uploaded: {displayFormattedTimestamp(product?.createdAt)}
+              </p>
+              <p className="capitalize flex gap-2">
+                <span className="text-green-500 font-semibold">ID:</span>{" "}
+                <span className="text-slate-900 font-bold">{product?._id}</span>
+              </p>
+              <div className="font-semibold flex gap-4">
+                <span>Call</span>
+                <div className="flex">
+                  <FcCellPhone className="text-xl" />
+                  <span className="text-blue-600">{product.phoneNumber}</span>
                 </div>
-                <div className="cursor-pointer p-4 grid gap-3">
-                  <p className="font-semibold text-red-600">
-                    {displayKESCurrency(product.price)}
-                  </p>
-                  <p className="font-semibold text-green-600">
-                    {product.brandName}
-                  </p>
-                  <p className="font-semibold text-green-600">
-                    {product.productName}
-                  </p>
-                  <p className="text-blue-500 font-semibold">
-                    Uploaded: {displayFormattedTimestamp(product?.createdAt)}
-                  </p>
-                  <p className="capitalize flex gap-2">
-                    <span className="text-green-500 font-semibold">ID:</span>{" "}
-                    <span className="text-slate-900 font-bold">{product?._id}</span>
-                  </p>
-                  <div className="font-semibold flex gap-4">
-                    <span>Call</span>
-                    <div className="flex">
-                      <FcCellPhone className="text-xl" />
-                      <span className="text-blue-600">{product.phoneNumber}</span>
-                    </div>
-                  </div>
-                  <p className="text-slate-700">{product.description}</p>
-                </div>
-              </Link>
+              </div>
+              <p className="text-slate-700">{product.description}</p>
+            </div>
+          </Link>
+          
             ))}
       </div>
     </div>
