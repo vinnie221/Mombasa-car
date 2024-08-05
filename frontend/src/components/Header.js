@@ -95,7 +95,7 @@ const Header = () => {
         </div>
         {/* Animation Text */}
       <div className="hidden lg:flex justify-center items-center w-full overflow-hidden">
-        <div className="animate-marquee whitespace-nowrap text-blue-500 font-semibold text-lg">
+        <div className="animate-marquee whitespace-nowrap text-blue-400 font-semibold text-lg">
         Your journey starts here..
         </div>
       </div>
