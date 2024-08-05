@@ -62,7 +62,7 @@ const VerticalCardProductAuto = ({ category, heading }) => {
   return (
     <div className="container mx-auto px-2 my-6 relative">
       <h2 className="text-2xl font-semibold py-1">{heading}</h2>
-      <div className="block lg:hidden my-4">
+      {/* <div className="block lg:hidden my-4">
             <div className="relative flex items-center  w-full rounded-full focus-within:shadow pl-2">
               <input
                 type="text"
@@ -72,7 +72,7 @@ const VerticalCardProductAuto = ({ category, heading }) => {
                 value={search}
               />
             </div>
-          </div>
+          </div> */}
 
       <div className="flex flex-wrap items-start gap-4 md:gap-6 justify-between transition-all">
         {loading
@@ -97,7 +97,7 @@ const VerticalCardProductAuto = ({ category, heading }) => {
             <Link
             key={product?._id}
             to={"autoproduct/" + product?._id}
-            className="w-full sm:flex-grow sm:min-w-[280px] sm:max-w-[280px] md:min-w-[320px] md:max-w-[320px] bg-white rounded-sm shadow p-0"
+            className="w-full sm:flex-grow sm:min-w-[280px] sm:max-w-[280px] md:min-w-[320px] md:max-w-[320px] bg-white rounded-sm shadow p-1"
           >
             <div className="bg-blue-100 h-48 p-1 w-full sm:min-w-[280px] md:min-w-[145px] flex justify-center items-center">
               <img
