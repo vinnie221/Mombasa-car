@@ -3,6 +3,7 @@ import image1 from '../images/banner/banner2.jpeg'
 import image1mobile from '../images/banner/mobile.jpg'
 import image2 from '../images/banner/banner2origi.jpg'
 import image3 from '../images/banner/bannerorgi.jpg'
+import image4 from '../images/banner/banner3.jpg'
 import { FaAngleDoubleRight } from "react-icons/fa";
 import { FaAngleDoubleLeft } from "react-icons/fa";
 
@@ -18,7 +19,7 @@ const BannerProduct = () => {
 
 
   const desktopImages = [
-    image1,
+    image4,
     image2,
     
     image1mobile
