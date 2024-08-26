@@ -94,11 +94,18 @@ const Header = () => {
           </a>
         </div>
         {/* Animation Text */}
-      <div className="hidden lg:flex justify-center items-center w-full overflow-hidden">
-        <div className="animate-marquee whitespace-nowrap text-blue-400 font-semibold text-lg">
-        Your journey starts here..
+        <div className="hidden lg:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow pl-2">
+          <input
+            type="text"
+            placeholder="Search for products here..."
+            className="w-full outline-none"
+            onChange={handleSearch}
+            value={search}
+          />
+          <div className="text-lg min-w-[50px] h-8 bg-blue-600 flex items-center justify-center rounded-r-full text-white">
+            <FiSearch />
+          </div>
         </div>
-      </div>
 
         <div className="relative flex flex-col items-end gap-2">
           <div className="text-2xl cursor-pointer" onClick={() => setMenuDisplay((prev) => !prev)}>
@@ -174,8 +181,8 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="flex mt-0 px-0 rounded-xl">
-        <div className="lg:flex items-center max-w-sm border rounded-full focus-within:shadow pl-1">
+      <div className="flex lg:hidden mt-0 px-0 shadow-md bg-white fixed w-full">
+        <div className="lg:flex items-center max-w-sm border rounded-xl focus-within:shadow pl-1">
           <input
             type="text"
             placeholder="Search here..."
